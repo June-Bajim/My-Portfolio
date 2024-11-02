@@ -17,13 +17,12 @@ const LandingPage = () => {
 
   return (
     <ParticlesBackground>
-      <div className="flex justify-center items-center ">
+      <div className="flex justify-center items-center mx-auto">
         <div className="min-h-screen w-full">
           {/* Navigation */}
           <nav className="fixed top-0 w-full backdrop-blur-sm z-50">
-            <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-8xl mx-auto px-4 sm:px-4 lg:px-8">
               <div className="flex justify-between h-16 items-center">
-                {/* Moved logo more to the left */}
                 <div className="text-2xl font-patrick font-bold text-green pl-0">
                   Mugwimi.
                 </div>
@@ -43,12 +42,11 @@ const LandingPage = () => {
           </nav>
 
           {/* Hero Section */}
-          <div className="relative min-h-screen flex items-center">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-              {/* Adjusted grid gap and padding */}
-              <div className="grid md:grid-cols-2 gap-4 items-center">
-                {/* Left Content - Adjusted spacing */}
-                <div className="space-y-4 pr-8">
+          <div className="relative min-h-screen flex items-center mx-auto">
+            <div className="max-w-7xl mx-auto px-4 sm:px-4 mr-10 lg:px-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+                {/* Left Section - Text Content */}
+                <div className="space-y-4 text-center md:text-left">
                   <div className="text-green tracking-wider font-patrick text-xl">
                     Hello, I&apos;m
                   </div>
@@ -61,33 +59,34 @@ const LandingPage = () => {
                     <span className="text-white">.</span>
                   </h2>
 
+                  {/* Buttons */}
                   <div className="flex space-x-4 pt-2">
                     <button className="bg-green text-black px-6 py-3 rounded hover:bg-sage-600 transition-colors font-patrick font-bold">
-                      Hire me
+                      Talk to me
                     </button>
                     <button className="border-2 border-green text-sage-500 px-6 py-3 rounded hover:bg-sage-50 transition-colors font-patrick font-bold">
-                      Download CV
+                      Download Resume
                     </button>
                   </div>
                 </div>
 
-                {/* Right Image with Social Media Icons */}
-                <div className="hidden md:block md:pl-0">
-                  <div className="relative">
-                    <div className="w-[90%] aspect-square bg-gray-200 rounded-full overflow-hidden">
-                      <Image
-                        src="/Chris.jpeg"
-                        alt="Professional portrait"
-                        className="w-[400] h-[400] object-cover"
-                        width={400}
-                        height={400}
-                      />
-                    </div>
+                {/* Center Section - Image */}
+                <div className="flex justify-center">
+                  <div className="w-[80%] aspect-square bg-gray-200 rounded-full overflow-hidden">
+                    <Image
+                      src="/Chris.jpeg"
+                      alt="Professional portrait"
+                      className="w-full h-full object-cover"
+                      width={600}
+                      height={600}
+                    />
                   </div>
                 </div>
-              </div>
-              <div className="absolute -right-12  bottom top-1/2 -translate-y-1/2 flex gap-6">
-                <SocialMedia />
+
+                {/* Right Section - Social Media */}
+                <div className="flex justify-center md:justify-center">
+                  <SocialMedia />
+                </div>
               </div>
             </div>
           </div>
