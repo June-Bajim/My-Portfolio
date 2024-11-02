@@ -86,7 +86,7 @@ const LandingPage = () => {
                   </div>
                 </div>
               </div>
-              <div className="absolute -right-12 top-1/2 -translate-y-1/2">
+              <div className="absolute -right-12  bottom top-1/2 -translate-y-1/2 flex gap-6">
                 <SocialMedia />
               </div>
             </div>
