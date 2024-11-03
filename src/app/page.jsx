@@ -4,6 +4,8 @@ import Link from "next/link";
 import Image from "next/image";
 import ParticlesBackground from "../../components/ParticlesBackground";
 import SocialMedia from "../../components/SocialMedia";
+import StatisticsSection from "../../components/StatisticsSection";
+import AboutMe from "../../components/AboutMe";
 
 const LandingPage = () => {
   const navItems = [
@@ -31,7 +33,7 @@ const LandingPage = () => {
                     <Link
                       key={item}
                       href={`#${item.toLowerCase()}`}
-                      className="text-green hover:text-green transition-colors font-patrick font-bold"
+                      className="text-green hover:text-white transition-colors font-patrick font-bold"
                     >
                       {item}
                     </Link>
@@ -61,10 +63,10 @@ const LandingPage = () => {
 
                   {/* Buttons */}
                   <div className="flex space-x-4 pt-2">
-                    <button className="bg-green text-black px-6 py-3 rounded hover:bg-sage-600 transition-colors font-patrick font-bold">
+                    <button className="bg-green text-black px-6 py-3 rounded hover:border-2 border-green hover:bg-black hover:text-white transition-colors font-patrick font-bold">
                       Talk to me
                     </button>
-                    <button className="border-2 border-green text-sage-500 px-6 py-3 rounded hover:bg-sage-50 transition-colors font-patrick font-bold">
+                    <button className="border-2 border-green px-6 py-3 rounded hover:bg-green hover:text-black transition-colors font-patrick font-bold">
                       Download Resume
                     </button>
                   </div>
@@ -84,7 +86,7 @@ const LandingPage = () => {
                 </div>
 
                 {/* Right Section - Social Media */}
-                <div className="flex justify-center md:justify-center">
+                <div className="flex flex-col-4 justify-center md:justify-center ">
                   <SocialMedia />
                 </div>
               </div>
@@ -92,6 +94,8 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
+      <StatisticsSection />
+      <AboutMe />
     </ParticlesBackground>
   );
 };

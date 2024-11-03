@@ -5,28 +5,28 @@ const SocialMedia = () => {
   const socialLinks = [
     {
       icon: Github,
-      href: "https://github.com/yourusername",
+      href: "https://github.com/Chrismugwimi",
       label: "GitHub Profile",
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/yourusername",
+      href: "https://linkedin.com/in/Christopher-Mwangi-628388242",
       label: "LinkedIn Profile",
     },
     {
       icon: Twitter,
-      href: "https://twitter.com/yourusername",
+      href: "https://twitter.com/ChrisMwangi01?t=AerXMuMRsHfqcH25beyORQ&s=09",
       label: "Twitter Profile",
     },
     {
       icon: Mail,
-      href: "mailto:your.email@example.com",
+      href: "mailto:chrismugwimi01@gmail.com",
       label: "Email Me",
     },
   ];
 
   return (
-    <div style={{ writingMode: "vertical-rl" }} className="flex gap-6">
+    <div style={{ writingMode: "vertical-rl" }} className="flex gap-8">
       {socialLinks.map((social, index) => (
         <a
           key={index}
