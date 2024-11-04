@@ -23,16 +23,22 @@ const AboutMe = () => {
 
           {/* Content Section */}
           <div className="w-full flex flex-col justify-center">
-            <div className="animate-fadeIn">
-              <h2 className="text-3xl font-patrick text-green mb-6">
-                About Me
-              </h2>
+            <div>
+              <h2 className="text-3xl font-patrick text-green">About Me</h2>
+              <br />
               <div className="text-white mb-8 font-patrick">
                 <p>
                   Experienced in blending the art of design with the skill of
                   programming to deliver immersive and engaging user
                   experiences. I have strong proficiency in JavaScript and a
                   thorough understanding of React.js and its core principles.
+                </p>{" "}
+                <br />
+                <p>
+                  Additionally, I have completed several data science projects,
+                  showcasing my proficiency in analyzing and interpreting
+                  complex datasets. I am also skilled in computer
+                  troubleshooting and networking.
                 </p>
               </div>
 
@@ -56,6 +62,7 @@ const AboutMe = () => {
                 <h3 className="text-3xl font-patrick text-green mb-6">
                   My Interests
                 </h3>
+                <br />
                 <div className="flex flex-wrap gap-8">
                   {interests.map((interest, index) => (
                     <div key={index} className="flex items-center gap-3">
