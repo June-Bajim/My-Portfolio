@@ -1,68 +1,75 @@
 import React from "react";
-import { Mail, Phone, MapPin, Calendar } from "lucide-react";
-
-const PersonalDetail = ({ label, value }) => (
-  <div className="flex items-center gap-8 py-2">
-    <span className="font-medium text-gray-900 w-32">{label}:</span>
-    <span className="text-gray-600">{value}</span>
-  </div>
-);
-
-const InterestBadge = ({ icon, label }) => (
-  <div className="flex items-center gap-2 px-4 py-2 rounded-full bg-gray-100">
-    {icon}
-    <span className="text-sm font-medium">{label}</span>
-  </div>
-);
+import { Music, Briefcase, Film, Trophy } from "lucide-react";
 
 const AboutMe = () => {
-  const details = [
-    { label: "Name", value: "Your Name" },
-    { label: "Date of birth", value: "January 01, 1990" },
-    { label: "Address", value: "San Francisco CA USA" },
-    { label: "Zip code", value: "1000" },
-    { label: "Email", value: "email@example.com" },
-    { label: "Phone", value: "+1-234-567-890" },
-  ];
-
   const interests = [
-    { icon: "🎵", label: "Music" },
-    { icon: "✈️", label: "Travel" },
-    { icon: "🎬", label: "Movie" },
-    { icon: "⚽", label: "Sports" },
+    { icon: <Music className="w-6 h-6" />, text: "Music" },
+    { icon: <Briefcase className="w-6 h-6" />, text: "Travelling" },
+    { icon: <Film className="w-6 h-6" />, text: "Technology" },
+    { icon: <Trophy className="w-6 h-6" />, text: "Sports" },
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
-      <div className="mb-8">
-        <h2 className="text-sm uppercase tracking-wide text-gray-500 mb-2">
-          MY INTRO
-        </h2>
-        <h1 className="text-4xl font-bold text-gray-900 mb-6">About Me</h1>
-        <p className="text-gray-600 text-lg mb-8">
-          A brief introduction about yourself and your background. Share what
-          makes you unique and what you&aposre passionate about.
-        </p>
-      </div>
+    <div className="py-16">
+      <div className="container mx-auto px-4 max-w-7xl">
+        <div className="flex flex-col md:flex-row gap-8 items-center">
+          {/* Image Section */}
+          <div className="w-full relative">
+            <div className="relative">
+              <div className="absolute inset-0 z-10"></div>
+              <img src="/Chris.jpeg" alt="Profile" className="w-full" />
+            </div>
+          </div>
 
-      <div className="space-y-4">
-        {details.map((detail, index) => (
-          <PersonalDetail
-            key={index}
-            label={detail.label}
-            value={detail.value}
-          />
-        ))}
-      </div>
+          {/* Content Section */}
+          <div className="w-full flex flex-col justify-center">
+            <div className="animate-fadeIn">
+              <h2 className="text-3xl font-patrick text-green mb-6">
+                About Me
+              </h2>
+              <div className="text-white mb-8 font-patrick">
+                <p>
+                  Experienced in blending the art of design with the skill of
+                  programming to deliver immersive and engaging user
+                  experiences. I have strong proficiency in JavaScript and a
+                  thorough understanding of React.js and its core principles.
+                </p>
+              </div>
 
-      <div className="mt-8 flex flex-wrap gap-4">
-        {interests.map((interest, index) => (
-          <InterestBadge
-            key={index}
-            icon={<span className="text-xl">{interest.icon}</span>}
-            label={interest.label}
-          />
-        ))}
+              <div className="space-y-4 mb-8">
+                {[
+                  ["Location:", "Nyeri, Kenya"],
+                  ["Email:", " chrismugwimi01@gmail.com"],
+                  ["Phone:", " +254-757-961-791"],
+                ].map(([label, value]) => (
+                  <div key={label} className="flex">
+                    <span className="w-32 font-patrick text-green mr-4">
+                      {label}
+                    </span>
+                    <span className="text-white font-patrick">{value}</span>
+                  </div>
+                ))}
+              </div>
+
+              {/* Interests Section */}
+              <div className="">
+                <h3 className="text-3xl font-patrick text-green mb-6">
+                  My Interests
+                </h3>
+                <div className="flex flex-wrap gap-8">
+                  {interests.map((interest, index) => (
+                    <div key={index} className="flex items-center gap-3">
+                      <div className="w-12 h-12 rounded-full flex items-center justify-center text-green">
+                        {interest.icon}
+                      </div>
+                      <span className="font-patrick">{interest.text}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );

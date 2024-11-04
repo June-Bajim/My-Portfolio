@@ -1,4 +1,5 @@
 "use client";
+import { useState, useEffect } from "react";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
@@ -94,7 +95,7 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <StatisticsSection />
+      {/* <StatisticsSection /> */}
       <AboutMe />
     </ParticlesBackground>
   );
