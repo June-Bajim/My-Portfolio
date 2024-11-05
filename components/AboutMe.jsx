@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { Music, Briefcase, Film, Trophy } from "lucide-react";
 
 const AboutMe = () => {
@@ -17,7 +18,13 @@ const AboutMe = () => {
           <div className="w-full relative">
             <div className="relative">
               <div className="absolute inset-0 z-10"></div>
-              <img src="/Chris.jpeg" alt="Profile" className="w-full" />
+              <Image
+                src="/Chris.jpeg"
+                alt="Profile"
+                className="object-cover"
+                width={550}
+                height={550}
+              />
             </div>
           </div>
 
@@ -65,10 +72,11 @@ const AboutMe = () => {
                 <br />
                 <div className="flex flex-wrap gap-8">
                   {interests.map((interest, index) => (
-                    <div key={index} className="flex items-center gap-3">
+                    <div key={index} className="flex items-center gap-6">
                       <div className="w-12 h-12 rounded-full flex items-center justify-center text-green">
                         {interest.icon}
                       </div>
+
                       <span className="font-patrick">{interest.text}</span>
                     </div>
                   ))}
