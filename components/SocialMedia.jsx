@@ -10,17 +10,17 @@ const SocialMedia = () => {
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/Christopher-Mwangi-628388242",
+      href: "https://www.linkedin.com/in/june-rotich-8b1699238/",
       label: "LinkedIn Profile",
     },
     {
       icon: Twitter,
-      href: "https://twitter.com/ChrisMwangi01?t=AerXMuMRsHfqcH25beyORQ&s=09",
+      href: "https://x.com/JUN3E3",
       label: "Twitter Profile",
     },
     {
       icon: Mail,
-      href: "mailto:chrismugwimi01@gmail.com",
+      href: "mailto:junekrotich@gmail.com",
       label: "Email Me",
     },
   ];

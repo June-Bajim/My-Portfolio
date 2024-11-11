@@ -76,14 +76,14 @@ const ContactSection = () => {
             name="message"
             value={formData.message}
             onChange={handleChange}
-            className="w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500"
+            className="w-full border text-black border-gray-300 rounded-lg p-2 focus:outline-none focus:border-blue-500"
             rows="5"
             required
           />
         </div>
         <button
           type="submit"
-          className="w-full bg-blue-500 text-white font-semibold py-2 rounded-lg hover:bg-blue-600 transition-colors"
+          className="w-full bg-blue-800 text-white font-semibold py-2 rounded-lg hover:bg-blue-600 transition-colors"
           disabled={isSubmitting}
         >
           {isSubmitting ? 'Sending...' : 'Send Message'}
@@ -93,8 +93,8 @@ const ContactSection = () => {
 
       <div className="mt-10 text-center">
         <p className="text-gray-700  text-xl font-patrick">Or reach out directly at:</p>
-        <p className="font-semibold font-patrick text-blue-500">junekrotich@gmail.com</p>
-        <p className="font-semibold font-patrick text-blue-500">+254 745 383 037</p>
+        <p className="font-semibold font-patrick text-blue-800">junekrotich@gmail.com</p>
+        <p className="font-semibold font-patrick text-blue-800">+254 745 383 037</p>
       </div>
     </div>
   );

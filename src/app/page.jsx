@@ -100,7 +100,7 @@ const LandingPage = () => {
       <AboutMe />
       <Skills />
       <Projects />
-      <StatisticsSection />
+      {/* <StatisticsSection /> */}
       <Contact />
     </ParticlesBackground>
     
