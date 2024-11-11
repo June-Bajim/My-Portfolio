@@ -38,7 +38,7 @@ const ParticlesBackground = ({ children }) => {
               },
             },
             color: {
-              value: "#00ff00",
+              value: "#000000",
             },
             shape: {
               type: "circle",
@@ -54,7 +54,7 @@ const ParticlesBackground = ({ children }) => {
             line_linked: {
               enable: true,
               distance: 150,
-              color: "#00ff00",
+              color: "#0000ff",
               opacity: 0.4,
               width: 1,
             },

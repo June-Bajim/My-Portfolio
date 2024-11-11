@@ -5,7 +5,7 @@ const SocialMedia = () => {
   const socialLinks = [
     {
       icon: Github,
-      href: "https://github.com/Chrismugwimi",
+      href: "https://github.com/june-Bajim",
       label: "GitHub Profile",
     },
     {
@@ -34,7 +34,7 @@ const SocialMedia = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={social.label}
-          className="text-green hover:text-white transition-colors duration-300"
+          className="text-blue hover:text-white transition-colors duration-300"
         >
           <social.icon size={24} />
         </a>

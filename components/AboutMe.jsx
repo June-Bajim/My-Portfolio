@@ -17,35 +17,43 @@ const InterestBadge = ({ icon, label }) => (
 
 const AboutMe = () => {
   const details = [
-    { label: "Name", value: "Your Name" },
-    { label: "Date of birth", value: "January 01, 1990" },
-    { label: "Address", value: "San Francisco CA USA" },
+    { label: "Name", value: "June Jebiwott" },
+    { label: "Date of birth", value: "June 10, 2003" },
+    { label: "Address", value: "Nakuru, Kenya" },
     { label: "Zip code", value: "1000" },
-    { label: "Email", value: "email@example.com" },
-    { label: "Phone", value: "+1-234-567-890" },
+    { label: "Email", value: "junekrotich@gmail.com" },
+    { label: "Phone", value: "+254 745 383 037" },
   ];
 
   const interests = [
     { icon: "🎵", label: "Music" },
     { icon: "✈️", label: "Travel" },
     { icon: "🎬", label: "Movie" },
-    { icon: "⚽", label: "Sports" },
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-12">
-      <div className="mb-8">
-        <h2 className="text-sm uppercase tracking-wide text-gray-500 mb-2">
-          MY INTRO
-        </h2>
-        <h1 className="text-4xl font-bold text-gray-900 mb-6">About Me</h1>
-        <p className="text-gray-600 text-lg mb-8">
-          A brief introduction about yourself and your background. Share what
-          makes you unique and what you&aposre passionate about.
-        </p>
-      </div>
+<div className="max-w-7xl mx-auto px-2 py-7 ">
+<h1 className="text-3xl font-bold mb-8 font-patrick text-center">About Me</h1>
+  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', height: '60vh', gap: '10px' }}>
+    {/* Left side - Image Section */}
+    <div style={{ flex: '1', maxWidth: '50%', padding: '20px', marginTop:'4' }}>
+      <img
+        src="/download (2).jpeg"  // Replace with the actual image path or URL
+        alt="About Me Image"
+        style={{ width: '100%', height: '60vh', borderRadius: '8px' }}  // Adjust as needed
+      />
+    </div>
 
-      <div className="space-y-4">
+    {/* Right side - About Me and Additional Content */}
+    <div style={{ flex: '1', maxWidth: '50%', textAlign: 'left', padding: '20px' }}>
+      <p className="text-l font-patrick">
+        I am a dedicated full-stack developer with strong practical skills across both front-end and back-end technologies, as well as in artificial intelligence and machine learning. My front-end expertise includes HTML, CSS, JavaScript, React.js, and Next.js, while my back-end skills span Node.js, Python, and Flask, enabling me to build dynamic, scalable applications. I have experience developing and training machine learning models in Python to address real-world challenges, with one of my notable projects being the creation of a sentiment analysis model and accompanying website.
+      </p>
+      <p className="text-l font-patrick mt-6">
+        In addition to web development, I am proficient in programming languages such as Java, C, and C++. I possess a solid foundation in database management, computer networking, and cybersecurity and have cultivated a keen interest in data science. My well-rounded skill set allows me to approach problems holistically and develop effective tech solutions.
+      </p>
+<br />
+      {/* <div className="space-y-4 mt-4 text-l font-patrick">
         {details.map((detail, index) => (
           <PersonalDetail
             key={index}
@@ -54,17 +62,25 @@ const AboutMe = () => {
           />
         ))}
       </div>
-
-      <div className="mt-8 flex flex-wrap gap-4">
+      <br />
+      <div className="mt-8 flex flex-wrap gap-4 text-l font-patrick">
+        <h2 className="text-xl font-patrick fontWeight-bold">My Interest:  </h2>
+        
         {interests.map((interest, index) => (
           <InterestBadge
             key={index}
-            icon={<span className="text-xl">{interest.icon}</span>}
+            icon={<span className="text-l">{interest.icon}</span>}
             label={interest.label}
           />
         ))}
-      </div>
+      </div> */}
     </div>
+  </div>
+  <br />
+</div>
+
+
+
   );
 };
 

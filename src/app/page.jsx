@@ -6,39 +6,41 @@ import ParticlesBackground from "../../components/ParticlesBackground";
 import SocialMedia from "../../components/SocialMedia";
 import StatisticsSection from "../../components/StatisticsSection";
 import AboutMe from "../../components/AboutMe";
+import Skills from "../../components/Skills";
+import Projects from "../../components/Projects";
+import Contact from "../../components/Contact";
 
 const LandingPage = () => {
   const navItems = [
-    "About Me",
-    "Skills",
-    "Projects",
-    "Work",
-    "Blog",
-    "Contact",
+    { name: "About Me", path: "/About" },
+    { name: "Skills", path: "/skills" },
+    { name: "Projects", path: "/projects" },
+    { name: "Work", path: "/work" },
+    { name: "Blog", path: "/blog" },
+    { name: "Contact", path: "/contact" },
   ];
 
   return (
+    <>
     <ParticlesBackground>
       <div className="flex justify-center items-center mx-auto">
-        <div className="min-h-screen w-full">
+        <div className="h w-full">
           {/* Navigation */}
           <nav className="fixed top-0 w-full backdrop-blur-sm z-50">
             <div className="max-w-8xl mx-auto px-4 sm:px-4 lg:px-8">
               <div className="flex justify-between h-16 items-center">
-                <div className="text-2xl font-patrick font-bold text-green pl-0">
-                  Mugwimi.
+                <div className="text-2xl font-patrick font-bold text-blue pl-0">
+              
                 </div>
                 <div className="hidden md:flex space-x-16 px-10">
-                  {navItems.map((item) => (
-                    <Link
-                      key={item}
-                      href={`#${item.toLowerCase()}`}
-                      className="text-green hover:text-white transition-colors font-patrick font-bold"
-                    >
-                      {item}
-                    </Link>
-                  ))}
-                </div>
+      {navItems.map((item) => (
+        <Link key={item.name} href={item.path}>
+          <div className="bg-gray hover:text-white transition-colors font-patrick font-bold">
+            {item.name}
+          </div>
+        </Link>
+      ))}
+    </div>
               </div>
             </div>
           </nav>
@@ -49,25 +51,25 @@ const LandingPage = () => {
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
                 {/* Left Section - Text Content */}
                 <div className="space-y-4 text-center md:text-left">
-                  <div className="text-green tracking-wider font-patrick text-xl">
+                  <div className="bg-gray tracking-wider font-patrick text-xl">
                     Hello, I&apos;m
                   </div>
                   <h1 className="text-5xl md:text-6xl font-patrick tracking-loose">
-                    Christopher <br /> Mwangi,
+                    June <br /> Jebiwott,
                   </h1>
                   <h2 className="text-3xl md:text-2xl font-patrick leading-tight font-courier">
                     I&apos;m a{" "}
-                    <span className="text-blue-600">Software Engineer</span>
+                    <span className="text-green-600">Software Developer</span>
                     <span className="text-white">.</span>
                   </h2>
 
                   {/* Buttons */}
                   <div className="flex space-x-4 pt-2">
-                    <button className="bg-green text-black px-6 py-3 rounded hover:border-2 border-green hover:bg-black hover:text-white transition-colors font-patrick font-bold">
+                    <button className="border-2 border-blue px-6 py-3 rounded hover:bg-blue hover:text-white transition-colors font-patrick font-bold">
                       Talk to me
                     </button>
-                    <button className="border-2 border-green px-6 py-3 rounded hover:bg-green hover:text-black transition-colors font-patrick font-bold">
-                      Download Resume
+                    <button className="border-2 border-blue px-6 py-3 rounded hover:bg-blue hover:text-white transition-colors font-patrick font-bold">
+                      Download CV
                     </button>
                   </div>
                 </div>
@@ -76,7 +78,7 @@ const LandingPage = () => {
                 <div className="flex justify-center">
                   <div className="w-[80%] aspect-square bg-gray-200 rounded-full overflow-hidden">
                     <Image
-                      src="/Chris.jpeg"
+                      src="/download (2).jpeg"
                       alt="Professional portrait"
                       className="w-full h-full object-cover"
                       width={600}
@@ -94,9 +96,16 @@ const LandingPage = () => {
           </div>
         </div>
       </div>
-      <StatisticsSection />
+      
       <AboutMe />
+      <Skills />
+      <Projects />
+      <StatisticsSection />
+      <Contact />
     </ParticlesBackground>
+    
+    </>
+    
   );
 };
 
