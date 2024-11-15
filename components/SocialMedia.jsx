@@ -5,22 +5,22 @@ const SocialMedia = () => {
   const socialLinks = [
     {
       icon: Github,
-      href: "https://github.com/Chrismugwimi",
+      href: "https://github.com/june-Bajim",
       label: "GitHub Profile",
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/Christopher-Mwangi-628388242",
+      href: "https://www.linkedin.com/in/june-rotich-8b1699238/",
       label: "LinkedIn Profile",
     },
     {
       icon: Twitter,
-      href: "https://twitter.com/ChrisMwangi01?t=AerXMuMRsHfqcH25beyORQ&s=09",
+      href: "https://x.com/JUN3E3",
       label: "Twitter Profile",
     },
     {
       icon: Mail,
-      href: "mailto:chrismugwimi01@gmail.com",
+      href: "mailto:junekrotich@gmail.com",
       label: "Email Me",
     },
   ];
@@ -34,7 +34,7 @@ const SocialMedia = () => {
           target="_blank"
           rel="noopener noreferrer"
           aria-label={social.label}
-          className="text-green hover:text-white transition-colors duration-300"
+          className="text-blue hover:text-white transition-colors duration-300"
         >
           <social.icon size={24} />
         </a>

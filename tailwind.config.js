@@ -2,8 +2,11 @@
 module.exports = {
   darkMode: ["class"],
   content: [
+    "./pages/**/*.{js,ts,jsx,tsx,mdx}",    // Added root pages directory
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./components/**/*.{js,ts,jsx,tsx,mdx}", // Added root components directory
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./app/**/*.{js,ts,jsx,tsx,mdx}",      // Added root app directory
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/**/*.{ts,tsx,js,jsx}",
   ],

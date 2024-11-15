@@ -1,91 +1,69 @@
 import React from "react";
-import Image from "next/image";
-import { Music, Briefcase, Film, Trophy } from "lucide-react";
+import { Code, Shield, Cpu, Monitor } from "lucide-react"; // Import suitable icons from lucide-react
+
+const PersonalDetail = ({ label, value }) => (
+  <div className="flex items-center gap-8 py-2">
+    <span className="font-medium text-gray-900 w-32">{label}:</span>
+    <span className="text-gray-600">{value}</span>
+  </div>
+);
+
+const SkillBadge = ({ icon, label }) => (
+  <div className="flex flex-col items-center gap-2 p-4 rounded-lg bg-gray-100 w-24 text-blue-800">
+    {icon}
+    <span className="text-sm font-medium text-blue-800">{label}</span>
+  </div>
+);
 
 const AboutMe = () => {
-  const interests = [
-    { icon: <Music className="w-6 h-6" />, text: "Music" },
-    { icon: <Briefcase className="w-6 h-6" />, text: "Travelling" },
-    { icon: <Film className="w-6 h-6" />, text: "Technology" },
-    { icon: <Trophy className="w-6 h-6" />, text: "Sports" },
+  const details = [
+    { label: "Name", value: "June Jebiwott" },
+    { label: "Date of birth", value: "June 10, 2003" },
+    { label: "Address", value: "Nakuru, Kenya" },
+    { label: "Zip code", value: "1000" },
+    { label: "Email", value: "junekrotich@gmail.com" },
+    { label: "Phone", value: "+254 745 383 037" },
+  ];
+
+  const skills = [
+    { icon: <Monitor size={32} />, label: "Web Development" },
+    { icon: <Code size={32} />, label: "Front-End" },
+    { icon: <Shield size={32} />, label: "Cybersecurity" },
+    { icon: <Cpu size={32} />, label: "Machine Learning" },
   ];
 
   return (
-    <div className="py-16">
-      <div className="container mx-auto px-4 max-w-7xl">
-        <div className="flex flex-col md:flex-row gap-8 items-center">
-          {/* Image Section */}
-          <div className="w-full relative">
-            <div className="relative">
-              <div className="absolute inset-0 z-10"></div>
-              <Image
-                src="/Chris.jpeg"
-                alt="Profile"
-                className="object-cover"
-                width={550}
-                height={550}
-              />
-            </div>
+    <div className="max-w-7xl mx-auto px-2 py-7">
+      <h1 className="text-3xl font-bold mb-8 font-patrick text-center">About Me</h1>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', height: '60vh', gap: '10px' }}>
+        
+        {/* Left side - Image Section */}
+        <div style={{ flex: '1', maxWidth: '50%', padding: '20px', marginTop:'4' }}>
+          <img
+            src="/download (2).jpeg"  // Replace with the actual image path or URL
+            alt="About Me Image"
+            style={{ width: '100%', height: '60vh', borderRadius: '8px' }}  // Adjust as needed
+          />
+        </div>
+
+        {/* Right side - Skills and Additional Content */}
+        <div style={{ flex: '1', maxWidth: '50%', textAlign: 'left', padding: '20px' }}>
+          <h2 className="text-xl font-bold mb-4">Services</h2>
+          <div className="flex flex-wrap gap-4">
+            {skills.map((skill, index) => (
+              <SkillBadge key={index} icon={skill.icon} label={skill.label} />
+            ))}
           </div>
 
-          {/* Content Section */}
-          <div className="w-full flex flex-col justify-center">
-            <div>
-              <h2 className="text-3xl font-patrick text-green">About Me</h2>
-              <br />
-              <div className="text-white mb-8 font-patrick">
-                <p>
-                  Experienced in blending the art of design with the skill of
-                  programming to deliver immersive and engaging user
-                  experiences. I have strong proficiency in JavaScript and a
-                  thorough understanding of React.js and its core principles.
-                </p>{" "}
-                <br />
-                <p>
-                  Additionally, I have completed several data science projects,
-                  showcasing my proficiency in analyzing and interpreting
-                  complex datasets. I am also skilled in computer
-                  troubleshooting and networking.
-                </p>
-              </div>
-
-              <div className="space-y-4 mb-8">
-                {[
-                  ["Location:", "Nyeri, Kenya"],
-                  ["Email:", " chrismugwimi01@gmail.com"],
-                  ["Phone:", " +254-757-961-791"],
-                ].map(([label, value]) => (
-                  <div key={label} className="flex">
-                    <span className="w-32 font-patrick text-green mr-4">
-                      {label}
-                    </span>
-                    <span className="text-white font-patrick">{value}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Interests Section */}
-              <div className="">
-                <h3 className="text-3xl font-patrick text-green mb-6">
-                  My Interests
-                </h3>
-                <br />
-                <div className="flex flex-wrap gap-8">
-                  {interests.map((interest, index) => (
-                    <div key={index} className="flex items-center gap-6">
-                      <div className="w-12 h-12 rounded-full flex items-center justify-center text-green">
-                        {interest.icon}
-                      </div>
-
-                      <span className="font-patrick">{interest.text}</span>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
+          {/* Additional Details */}
+          <div className="space-y-4 mt-4 mb-8">
+            {details.map((detail, index) => (
+              <PersonalDetail key={index} label={detail.label} value={detail.value} />
+            ))}
           </div>
         </div>
       </div>
+      <br />
     </div>
   );
 };

@@ -1,73 +1,83 @@
-import React from "react";
+import React from 'react';
+import { CircularProgressbar, buildStyles } from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
+import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaPython, FaDatabase, FaJava,FaFlask } from 'react-icons/fa';
+import { SiNextdotjs, SiTailwindcss } from 'react-icons/si';
 
-const SkillCircle = ({ skill, percentage }) => {
-  const circumference = 2 * Math.PI * 47; // Circle radius of 47 units
-  const offset = circumference - (percentage / 100) * circumference;
+const skills = [
+    { icon: <FaHtml5 className="text-[#E34F26]" />, name: "HTML", level: 90 },  
+    { icon: <FaCss3Alt className="text-[#1572B6]" />, name: "CSS", level: 85 },     
+    { icon: <FaJsSquare className="text-[#F7DF1E]" />, name: "JavaScript", level: 80 }, 
+    { icon: <FaReact className="text-[#61DBFB]" />, name: "React.js", level: 75 },     
+    { icon: <SiNextdotjs className="text-black" />, name: "Next.js", level: 70 },      
+    { icon: <FaNodeJs className="text-[#68A063]" />, name: "Node.js", level: 60 },     
+    { icon: <FaPython className="text-[#306998]" />, name: "Python", level: 65 },      
+    { icon: <FaDatabase className="text-[#6DB33F]" />, name: "Database", level: 70 },   
+    { icon: <SiTailwindcss className="text-[#38B2AC]" />, name: "TailwindCSS", level: 75 },
+    { icon: <FaJava className="text-[#007396]" />, name: "Java", level: 70 }, 
+    { icon: <FaFlask className="text-[#000000]" />, name: "Flask", level: 65 },
+    { icon: <FaPython className="text-[#306998]" />, name: "Machine Learning", level: 75 },
+  ];
+
+const Skills = () => {
+  const midIndex = Math.ceil(skills.length / 2);
+  const firstColumn = skills.slice(0, midIndex);
+  const secondColumn = skills.slice(midIndex);
 
   return (
-    <div className="flex-1 max-w-xs">
-      {/* Skill name at the top */}
-      <h3 className="text-xl font-bold text-center mb-4">{skill}</h3>
-
-      {/* Circle with percentage inside */}
-      <div className="relative w-32 h-32 mx-auto">
-        <svg className="w-full h-full transform -rotate-90">
-          <circle
-            cx="64"
-            cy="64"
-            r="47"
-            stroke="#e6e6e6"
-            strokeWidth="6"
-            fill="none"
-          />
-          <circle
-            cx="64"
-            cy="64"
-            r="47"
-            stroke="green"
-            strokeWidth="6"
-            fill="none"
-            strokeDasharray={circumference}
-            strokeDashoffset={offset}
-            className="transition-all duration-1000 ease-out"
-          />
-        </svg>
-        {/* Percentage text centered inside the circle */}
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <span className="text-2xl font-bold">{percentage}%</span>
+<div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-8">
+      <h1 className="text-3xl font-bold mb-6 text-center font-patrick">My Skills</h1>
+      <div className="flex justify-center items-center mb-8 space-x-28">
+        <div className="flex flex-col space-y-6">
+          {firstColumn.map((skill, index) => (
+            <div key={index} className="flex items-center justify-center">
+              <div className="flex flex-col items-center"> <div className="w-16 h-12 flex items-center justify-center bg-white rounded-md mr-8 shadow">
+                  <div className="text-3xl text-blue-700">{skill.icon}</div>
+                </div>
+                <span className="mt-2 text-center text-sm font-patrick text-white">{skill.name}</span>
+              </div>
+              <div style={{ width: '70px', height: '70px', marginLeft: '8px' }}>
+                <CircularProgressbar
+                  value={skill.level}
+                  text={`${skill.level}%`}
+                  styles={buildStyles({
+                    pathColor: "#008000",
+                    textColor: "#ffffff",
+                    trailColor: "#d6d6d6",
+                    strokeWidth: 6,
+                  })}
+                />
+              </div>
+            </div>
+          ))}
+        </div>
+        <div className="flex flex-col space-y-6">
+          {secondColumn.map((skill, index) => (
+            <div key={index} className="flex items-center justify-center">
+              <div className="flex flex-col items-center">
+              <div className="w-16 h-12 flex items-center justify-center bg-white rounded-md mr-8 shadow">
+                  <div className="text-3xl text-blue-700">{skill.icon}</div>
+                </div>
+                <span className="mt-2 text-center text-sm font-patrick text-white">{skill.name}</span>
+              </div>
+              <div style={{ width: '70px', height: '70px', marginLeft: '8px' }}>
+                <CircularProgressbar
+                  value={skill.level}
+                  text={`${skill.level}%`}
+                  styles={buildStyles({
+                    pathColor: "#008000",
+                    textColor: "#ffffff",
+                    trailColor: "#d6d6d6",
+                    strokeWidth: 6,
+                  })}
+                />
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>
   );
 };
 
-const SkillsDisplay = () => {
-  const skills = [
-    { name: "CSS", percentage: 95 },
-    { name: "HTML", percentage: 98 },
-    { name: "jQuery", percentage: 68 },
-  ];
-
-  return (
-    <div className="w-full max-w-6xl mx-auto p-8">
-      <div className="text-center mb-12">
-        <h2 className="text-4xl font-bold mb-4">My Skills</h2>
-        <p className="text-gray-600">
-          Far far away, behind the word mountains, far from the countries
-          Vokalia and Consonantia
-        </p>
-      </div>
-      <div className="flex flex-row gap-8 justify-center">
-        {skills.map((skill) => (
-          <SkillCircle
-            key={skill.name}
-            skill={skill.name}
-            percentage={skill.percentage}
-          />
-        ))}
-      </div>
-    </div>
-  );
-};
-
-export default SkillsDisplay;
+export default Skills;
