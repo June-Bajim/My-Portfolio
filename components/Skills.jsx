@@ -5,18 +5,18 @@ import { FaHtml5, FaCss3Alt, FaJsSquare, FaReact, FaNodeJs, FaPython, FaDatabase
 import { SiNextdotjs, SiTailwindcss } from 'react-icons/si';
 
 const skills = [
-    { icon: <FaHtml5 className="text-[#E34F26]" />, name: "HTML", level: 90 },  
+    { icon: <FaHtml5 className="text-[#E34F26]" />, name: "HTML", level: 89 },  
     { icon: <FaCss3Alt className="text-[#1572B6]" />, name: "CSS", level: 85 },     
-    { icon: <FaJsSquare className="text-[#F7DF1E]" />, name: "JavaScript", level: 80 }, 
+    { icon: <FaJsSquare className="text-[#F7DF1E]" />, name: "JavaScript", level: 72 }, 
     { icon: <FaReact className="text-[#61DBFB]" />, name: "React.js", level: 75 },     
-    { icon: <SiNextdotjs className="text-black" />, name: "Next.js", level: 70 },      
-    { icon: <FaNodeJs className="text-[#68A063]" />, name: "Node.js", level: 60 },     
-    { icon: <FaPython className="text-[#306998]" />, name: "Python", level: 65 },      
+    { icon: <SiNextdotjs className="text-black" />, name: "Next.js", level: 65 },      
+    { icon: <FaNodeJs className="text-[#68A063]" />, name: "Node.js", level: 57 },     
+    { icon: <FaPython className="text-[#306998]" />, name: "Python", level: 63 },      
     { icon: <FaDatabase className="text-[#6DB33F]" />, name: "Database", level: 70 },   
-    { icon: <SiTailwindcss className="text-[#38B2AC]" />, name: "TailwindCSS", level: 75 },
-    { icon: <FaJava className="text-[#007396]" />, name: "Java", level: 70 }, 
-    { icon: <FaFlask className="text-[#000000]" />, name: "Flask", level: 65 },
-    { icon: <FaPython className="text-[#306998]" />, name: "Machine Learning", level: 75 },
+    { icon: <SiTailwindcss className="text-[#38B2AC]" />, name: "TailwindCSS", level: 80 },
+    { icon: <FaJava className="text-[#007396]" />, name: "Java", level: 20 }, 
+    { icon: <FaFlask className="text-[#000000]" />, name: "Flask", level: 35 },
+    { icon: <FaPython className="text-[#306998]" />, name: "Machine Learning", level: 48 },
   ];
 
 const Skills = () => {

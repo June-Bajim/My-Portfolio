@@ -9,7 +9,7 @@ const PersonalDetail = ({ label, value }) => (
 );
 
 const SkillBadge = ({ icon, label }) => (
-  <div className="flex flex-col items-center gap-2 p-4 rounded-lg bg-gray-100 w-24 text-blue-800">
+  <div className="text-2xl flex flex-col items-center gap-2 p-4 rounded-lg bg-gray-100 w-24 text-blue-800 mr-6">
     {icon}
     <span className="text-sm font-medium text-blue-800">{label}</span>
   </div>
@@ -18,7 +18,7 @@ const SkillBadge = ({ icon, label }) => (
 const AboutMe = () => {
   const details = [
     { label: "Name", value: "June Jebiwott" },
-    { label: "Date of birth", value: "June 10, 2003" },
+    // { label: "Date of birth", value: "June 10, 2003" },
     { label: "Address", value: "Nakuru, Kenya" },
     { label: "Zip code", value: "1000" },
     { label: "Email", value: "junekrotich@gmail.com" },
@@ -28,7 +28,7 @@ const AboutMe = () => {
   const skills = [
     { icon: <Monitor size={32} />, label: "Web Development" },
     { icon: <Code size={32} />, label: "Front-End" },
-    { icon: <Shield size={32} />, label: "Cybersecurity" },
+    // { icon: <Shield size={32} />, label: "Cybersecurity" },
     { icon: <Cpu size={32} />, label: "Machine Learning" },
   ];
 
